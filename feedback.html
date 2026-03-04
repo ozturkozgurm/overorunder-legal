@@ -1,18 +1,259 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback & Support - OverOrUnder</title>
     <style>
-        body { font-family: -apple-system, sans-serif; padding: 30px; line-height: 1.6; text-align: center; }
-        .icon { font-size: 50px; }
-        h1 { color: #007AFF; }
-        .email { font-weight: bold; color: #007AFF; font-size: 20px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #0a1628;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 0.95em;
+        }
+        h2 {
+            color: #0a1628;
+            font-size: 1.4em;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ffd700;
+        }
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: block;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #0a1628, #1a3a5c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        .highlight {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+            margin: 20px 0;
+        }
+        .contact-card {
+            background: linear-gradient(135deg, #0a1628, #1a3a5c);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .contact-card h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .contact-card p {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .contact-card a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        .email-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #0a1628;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .email-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        .faq-item h4 {
+            color: #0a1628;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .faq-item p {
+            margin-bottom: 0;
+            color: #555;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: background 0.2s;
+        }
+        .social-link:hover {
+            background: rgba(255,215,0,0.3);
+        }
+        .response-time {
+            background: #e8f5e9;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+            border-left: 4px solid #4caf50;
+        }
+        .response-time strong {
+            color: #2e7d32;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
-    <div class="icon">✉️</div>
-    <h1>Geri Bildirim</h1>
-    <p>Görüşleriniz bizim için çok değerli. Uygulama hakkındaki hata raporlarını veya önerilerinizi aşağıdaki e-posta adresine iletebilirsiniz:</p>
-    <p class="email">support@overorunderpro.com</p>
-    <p>En geç 24 saat içinde size dönüş yapmaya çalışacağız.</p>
+    <div class="container">
+        <div class="app-icon">⚽</div>
+        <h1>Feedback & Support</h1>
+        <p class="subtitle">OverOrUnder: Football Prediction App</p>
+
+        <div class="highlight">
+            <strong>We Value Your Feedback!</strong> Your opinions help us improve OverOrUnder. Whether you have a suggestion, found a bug, or just want to say hello, we'd love to hear from you.
+        </div>
+
+        <h2>📧 Contact Us</h2>
+        <div class="contact-card">
+            <h3>Send Us an Email</h3>
+            <p>Have questions, suggestions, or issues?<br>We're here to help!</p>
+            <a href="mailto:ozturkozgurm@gmail.com?subject=OverOrUnder%20Feedback" class="email-button">
+                ✉️ Send Feedback
+            </a>
+        </div>
+
+        <div class="response-time">
+            <strong>⏱️ Average Response Time:</strong> We typically respond within 24-48 hours.
+        </div>
+
+        <h2>❓ Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h4>How do I restore my subscription?</h4>
+            <p>Go to Settings in the app, tap on Membership, then select "Restore Purchases". Make sure you're signed in with the same Apple ID you used for the original purchase.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Why am I not receiving notifications?</h4>
+            <p>Make sure notifications are enabled in your device Settings > OverOrUnder > Notifications. Also check that notifications are enabled within the app's Settings.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>How do I cancel my subscription?</h4>
+            <p>To cancel, go to your iPhone Settings > Apple ID > Subscriptions > OverOrUnder > Cancel Subscription. Your access will continue until the end of the current billing period.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Why can't I see predictions?</h4>
+            <p>Predictions are available for premium subscribers. If your trial has ended, you'll need to subscribe to view predictions. Check your subscription status in the app's Settings.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>How accurate are the predictions?</h4>
+            <p>Our predictions are based on careful analysis, but sports outcomes are inherently unpredictable. We provide predictions for entertainment and informational purposes. Past performance does not guarantee future results.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>The app is crashing. What should I do?</h4>
+            <p>Try these steps: 1) Close and reopen the app, 2) Restart your device, 3) Check for app updates in the App Store, 4) Reinstall the app. If the problem persists, please contact us with details about when the crash occurs.</p>
+        </div>
+
+        <h2>💡 Feature Requests</h2>
+        <p>Have an idea for a new feature? We're always looking for ways to improve! Send us your suggestions via email, and include:</p>
+        <ul style="margin: 15px 0; padding-left: 25px;">
+            <li>A clear description of the feature</li>
+            <li>How it would benefit users</li>
+            <li>Any examples from other apps (if applicable)</li>
+        </ul>
+
+        <h2>🐛 Bug Reports</h2>
+        <p>Found a bug? Help us fix it by providing:</p>
+        <ul style="margin: 15px 0; padding-left: 25px;">
+            <li>Your device model and iOS version</li>
+            <li>App version (found in Settings > About)</li>
+            <li>Steps to reproduce the issue</li>
+            <li>Screenshots or screen recordings (if possible)</li>
+        </ul>
+
+        <h2>⭐ Rate Us</h2>
+        <p>Enjoying OverOrUnder? We'd appreciate if you could rate us on the App Store! Your positive reviews help other football fans discover the app and motivate us to keep improving.</p>
+
+        <div class="contact-card">
+            <h3>Developer</h3>
+            <p><strong>Muhammet Özgür Öztürk</strong></p>
+            <p>📧 <a href="mailto:ozturkozgurm@gmail.com">ozturkozgurm@gmail.com</a></p>
+            <p>📍 Turkey</p>
+        </div>
+
+        <div class="footer">
+            <p>Thank you for using OverOrUnder! ⚽</p>
+            <p>© 2026 OverOrUnder. All rights reserved.</p>
+        </div>
+    </div>
 </body>
 </html>
